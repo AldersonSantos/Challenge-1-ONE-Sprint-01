@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       
+        <meta charset="UTF-8">
+        <title>Codificador De Texto</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+
+    <body>
+        <header>
+            <div class="conteiner">
+
+                <h1><img src="logo_header.png" alt="Logo codificador de texto"class="Imagem-header" ></h1>
+
+            </div>
+
+        </header>
+
+        <main>
+            
+            <form>
+                
+                <label for="texto-usuario" class="titulo-letras-minuscula">Use somente letra minúscula</label>
+                <textarea cols="68" rows="10" id="texto-usuario" onkeyup="textoUsuario()"class="texto-area-usuario" placeholder="Digite o texto que deseja criptocrafar"></textarea> 
+
+                <input type="button" onclick= "criptocrafarTexto()" value="criptografar" class="button-criptografar"> 
+                <input type="button" onclick="descriptografarTexto()" value="descriptografar" class="button-descriptografar"> 
+                <input type="button" onclick="copiarTexto()" value="copiar" class="button-copiar"> 
+                                             
+            </form>               
+                                         
+            <form >                
+
+                <textarea name="recebertexto" id="texto-critografado" cols="30" rows="10" class="area-criptografia" placeholder="Texto criptografado aparece aqui" ></textarea>
+                                                             
+            </form>
+
+            <script>
+
+                function textoUsuario(){
+
+                    var textArea = document.getElementById("texto-usuario");
+                    var textoUsuario = textArea.value;                
+                                                                               
+                }
+
+                function descriptografarTexto(){ 
+
+                    let textocriptografado = document.getElementById("texto-critografado").value;                    
+                 
+                    if(textocriptografado.length <= 0){
+
+                        let textocriptografado = document.getElementById("texto-usuario").value;
+                        let textoDescriptografado = textocriptografado.replace(/ufat/g,"u").replace(/ober/g,'o').replace(/ai/g,"a")
+                        .replace(/imes/g,'i').replace(/enter/g, "e");
+
+                        document.getElementById("texto-critografado").value = textoDescriptografado;
+                       
+                    }else{
+                        
+                        let textocriptografado = document.getElementById("texto-critografado").value;
+                        let textoDescriptografado = textocriptografado.replace(/ufat/g,"u").replace(/ober/g,'o').replace(/ai/g,"a")
+                        .replace(/imes/g,'i').replace(/enter/g, "e");
+
+                        document.getElementById("texto-critografado").value = textoDescriptografado; 
+                    }                     
+                                           
+                }             
+
+                function criptocrafarTexto(){                   
+                                        
+                    let textoUsuario = document.getElementById("texto-usuario").value; 
+                    let textoCritografado = textoUsuario.replace(/e/g,"enter").replace(/i/g,'imes').replace(/a/g,"ai")
+                    .replace(/o/g,'ober').replace(/u/g, "ufat");
+                    
+                    document.getElementById("texto-critografado").value = textoCritografado;     
+                                                                                                                                          
+                }
+
+                function copiarTexto(){
+
+                    var textoCritografado = document.getElementById("texto-critografado");
+                    textoCritografado.select();
+                    document.execCommand("copy");
+                }                                
+                                                                         
+            </script> 
+
+        </main>
+
+        <footer>
+
+            <img src="imagem_rotape.svg" class="imagem-footer" alt="Imagem do rodapé">
+            <p>ONE-Oracle Next Education T5 2023 : Alderson Santos</p>
+
+        </footer>
+
+    </body>
+</html>
