@@ -3,15 +3,21 @@
     <head>
        
         <meta charset="UTF-8">
-        <title>Codificador De Texto</title>
+        <title>Codificador de Texto</title>
         <link rel="stylesheet" href="reset.css">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style-index.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap" rel="stylesheet">
         
     </head>
 
     <body>
+
         <header>
-            <div class="conteiner">
+
+            <div class="logo">
 
                 <h1><img src="logo_header.png" alt="Logo codificador de texto"class="Imagem-header" ></h1>
 
@@ -23,20 +29,24 @@
             
             <form>
                 
-                <label for="texto-usuario" class="titulo-letras-minuscula">Use somente letra minúscula</label>
-                <textarea cols="68" rows="10" id="texto-usuario" onkeyup="textoUsuario()"class="texto-area-usuario" placeholder="Digite o texto que deseja criptocrafar"></textarea> 
+                <fieldset class="text-area">
 
-                <input type="button" onclick= "criptocrafarTexto()" value="criptografar" class="button-criptografar"> 
-                <input type="button" onclick="descriptografarTexto()" value="descriptografar" class="button-descriptografar"> 
-                <input type="button" onclick="copiarTexto()" value="copiar" class="button-copiar"> 
-                                             
-            </form>               
-                                         
-            <form >                
+                    <label for="texto-usuario">Use somente letra minúscula</label>
+                    <textarea cols="60" rows="6" id="texto-usuario" onkeyup="textoUsuario()" placeholder="Digite o texto que deseja criptocrafar ou descriptografar"></textarea> 
+                    <label for="texto-critografado">Decodificador de texto</label>
+                    <textarea name="recebertexto" id="texto-critografado" cols="60" rows="6" placeholder="Texto criptografado ou descriptografado aparecerá aqui" ></textarea>
+                                     
+                </fieldset> 
+                
+                <fieldset class="buttons">
 
-                <textarea name="recebertexto" id="texto-critografado" cols="30" rows="10" class="area-criptografia" placeholder="Texto criptografado aparece aqui" ></textarea>
-                                                             
-            </form>
+                    <input type="button" onclick="criptocrafarTexto()" value="Criptografar"> 
+                    <input type="button" onclick="descriptografarTexto()" value="Descriptografar"> 
+                    <input type="button" onclick="copiarTexto()" value="Copiar">                   
+
+                </fieldset>                                                       
+               
+            </form>   
 
             <script>
 
@@ -99,4 +109,5 @@
         </footer>
 
     </body>
+
 </html>
