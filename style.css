@@ -3,21 +3,22 @@ body {
      background: #e7e7e0;   
 }
 
-.logo{
+header {
      position: relative;
      width: 940px;
+     text-align: center;
      margin: 0 auto;
 }
 .Imagem-header{  
      width: 200px;
-     margin:10px 340px 0px 340px;
+     margin: 10px auto;
      pointer-events: none;
 }
 main {      
      position: relative;   
      width: 940px;
      height: 450px;
-     margin: 20px auto -20px auto;
+     margin: 10px auto -20px auto;
      border: 2px solid #00f7ffa6; 
      border-radius: 25px;  
      background: linear-gradient(#076fa0, #002c41);    
